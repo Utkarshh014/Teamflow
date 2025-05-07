@@ -63,7 +63,7 @@ export default function LandingPage() {
       </section>
 
       <footer className="footer" role="contentinfo">
-        © 2024 TeamFlow Clone. All rights reserved.
+        © 2025 TeamFlow. All rights reserved.
       </footer>
     </div>
   );
