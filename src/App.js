@@ -1,10 +1,25 @@
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import Login from "./pages/login";
+import Signup from "./pages/signup";
 
 function App() {
-  return (
-    <div className="App">
-      <h1>hello</h1>
-    </div>
+  return React.createElement(
+    BrowserRouter,
+    null,
+    React.createElement(
+      Routes,
+      null,
+      React.createElement(Route, { path: "/login", element: React.createElement(Login) }),
+      React.createElement(Route, { path: "/signup", element: React.createElement(Signup) }),
+      React.createElement(
+        Route,
+        {
+          path: "/dashboard",
+          element: React.createElement("div", null, "Welcome to Dashboard"),
+        }
+      )
+    )
   );
 }
 
