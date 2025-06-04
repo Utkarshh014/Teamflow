@@ -1,0 +1,25 @@
+.sidebar{
+    color: white;
+    background-color: var(--main-color);
+    border-top: 1px solid var(--main-color);
+    max-width: 260px;
+}
+
+.sidebar__header{
+    display: flex;
+    border: 1px solid var(--main-color);
+    padding: 13px;
+    padding-bottom: 10px;
+}
+
+.sidebar__info{
+    flex: 1;
+}
+
+.sidebar__header > .MuiSvgIcon-root{
+    padding: 8px;
+    color: var(--main-color);
+    font-size: 18px;
+    background-color: white;
+    border-radius: 999px;
+}
