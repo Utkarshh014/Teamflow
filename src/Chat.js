@@ -10,7 +10,7 @@ import Message from './Message';
 function Chat() {
   const { roomId } = useParams();
   const [roomDetails, setRoomDetails] = useState(null);
-  const [roomMessages, setRoomMessages] = useState([]); // ✅ Changed from null
+  const [roomMessages, setRoomMessages] = useState([]);
 
   useEffect(() => {
     if (roomId) {

@@ -3,15 +3,18 @@ import Header from './Header.js';
 import Sidebar from './Sidebar.js';
 import Chat from './Chat.js';
 import { Routes, Route } from 'react-router-dom';
-import React, { useState } from 'react';
+import React from 'react';
+import Login from './Login.js';
+import { useStateValue } from './StateProvider.js';
 
 function App() {
-  const [user, setUser] = useState(null);
+
+  const [{user}, dispatch] = useStateValue();
 
   return (
     <div className="App">
       {!user ? (
-        <h1>LOGIN page</h1>
+        <Login/>
       ) : (
         <>
           <Header />
