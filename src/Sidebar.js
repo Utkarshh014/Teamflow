@@ -15,23 +15,21 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AddIcon from '@mui/icons-material/Add';
 
 import { collection, onSnapshot } from 'firebase/firestore';
-import db from './firebase';
+import { db } from './firebase';
 
 function Sidebar() {
   const [channels, setChannels] = useState([]);
 
   useEffect(() => {
-    // Access the 'rooms' collection and listen for real-time updates
     const unsubscribe = onSnapshot(collection(db, 'rooms'), (snapshot) => {
       setChannels(
-        snapshot.docs.map(doc => ({
+        snapshot.docs.map((doc) => ({
           id: doc.id,
           name: doc.data().name
         }))
       );
     });
 
-    // Clean up listener on unmount
     return unsubscribe;
   }, []);
 
@@ -61,7 +59,7 @@ function Sidebar() {
       <hr />
       <SidebarOption Icon={AddIcon} addChannelOption title="Add Channel" />
 
-      {channels.map(channel => (
+      {channels.map((channel) => (
         <SidebarOption key={channel.id} title={channel.name} id={channel.id} />
       ))}
     </div>
